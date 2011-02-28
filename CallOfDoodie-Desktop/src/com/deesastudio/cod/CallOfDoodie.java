@@ -6,7 +6,7 @@ import com.deesastudio.cod.screens.GameLoop;
 import com.deesastudio.cod.screens.MenuScreen;
 import com.deesastudio.cod.screens.Screen;
 
-public class CallOfDoodie implements ApplicationListener{
+public class CallOfDoodie implements ApplicationListener {
     private boolean   mIsInitialized;
     private Screen    mScreen;
     
@@ -44,7 +44,7 @@ public class CallOfDoodie implements ApplicationListener{
     }
 
     @Override
-    public void resize(int arg0, int arg1) {
+    public void resize(int width, int height) {
         // TODO Auto-generated method stub
         
     }
