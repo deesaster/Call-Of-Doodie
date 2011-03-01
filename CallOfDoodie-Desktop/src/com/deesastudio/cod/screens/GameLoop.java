@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.actors.Button;
 import com.badlogic.gdx.scenes.scene2d.actors.Image;
-import com.badlogic.gdx.utils.ObjectMap;
+import com.deesastudio.cod.ValueBundle;
 
 public class GameLoop extends StageScreen {
     private final Texture           mBackgroundTexture;
@@ -15,8 +15,14 @@ public class GameLoop extends StageScreen {
     private TextureRegion           mUnpressedRegion;
     private TextureRegion           mPressedRegion;
     
-    public GameLoop(Application app, ScreenCallback callback, ObjectMap<String, Object> params) {
+    private int                     mLevelNum = 1;
+    
+    public GameLoop(Application app, ScreenCallback callback, ValueBundle params) {
         super(app, callback, params);
+        
+        if (params != null && params.containsKey("levelNum")) {
+            mLevelNum = (Integer)params.get("levelNum");
+        }
         
         mBackgroundTexture = new Texture(Gdx.files.internal("graphics/background.png"));
         mBackgroundTexture.setFilter(TextureFilter.Linear, TextureFilter.Linear);

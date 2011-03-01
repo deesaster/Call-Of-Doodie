@@ -3,12 +3,12 @@ package com.deesastudio.cod.screens;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.ObjectMap;
+import com.deesastudio.cod.ValueBundle;
 
 public class StageScreen extends Stage implements Screen {
     private ScreenCallback          mCallback;
     
-    public StageScreen(Application app, ScreenCallback callback, ObjectMap<String, Object> params) {
+    public StageScreen(Application app, ScreenCallback callback, ValueBundle params) {
         super(app.getGraphics().getWidth(), app.getGraphics().getHeight(), false);
         
         mCallback = callback;
@@ -33,7 +33,7 @@ public class StageScreen extends Stage implements Screen {
         mCallback = null;
     }
     
-    protected void finishWithResults(ObjectMap<String, Object> resultBundle) {
+    protected void finishWithResults(ValueBundle resultBundle) {
         if (mCallback != null) {
             mCallback.onScreenFinishedWithResults(this, resultBundle);
         }

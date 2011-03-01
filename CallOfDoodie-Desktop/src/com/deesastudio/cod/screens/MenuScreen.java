@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.actors.Button;
 import com.badlogic.gdx.scenes.scene2d.actors.Image;
-import com.badlogic.gdx.utils.ObjectMap;
+import com.deesastudio.cod.ValueBundle;
 
 public class MenuScreen extends StageScreen {
     
@@ -16,7 +16,7 @@ public class MenuScreen extends StageScreen {
     private TextureRegion           mUnpressedRegion;
     private TextureRegion           mPressedRegion;
     
-    public MenuScreen(Application app, ScreenCallback callback, ObjectMap<String, Object> params) {
+    public MenuScreen(Application app, ScreenCallback callback, ValueBundle params) {
         super(app, callback, params);
         
         mBackgroundTexture = new Texture(Gdx.files.internal("graphics/background.png"));

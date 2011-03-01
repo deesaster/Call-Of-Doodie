@@ -1,7 +1,7 @@
 package com.deesastudio.cod.screens;
 
-import com.badlogic.gdx.utils.ObjectMap;
+import com.deesastudio.cod.ValueBundle;
 
 public interface ScreenCallback {
-    public void onScreenFinishedWithResults(Screen screen, ObjectMap<String, Object> resultBundle);
+    public void onScreenFinishedWithResults(Screen screen, ValueBundle resultBundle);
 }

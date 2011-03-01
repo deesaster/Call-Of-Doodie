@@ -2,7 +2,6 @@ package com.deesastudio.cod;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.utils.ObjectMap;
 import com.deesastudio.cod.screens.GameLoop;
 import com.deesastudio.cod.screens.MenuScreen;
 import com.deesastudio.cod.screens.Screen;
@@ -55,7 +54,7 @@ public class CallOfDoodie implements ScreenCallback, ApplicationListener {
         
     }
 
-    protected void setScreen(int screenId, ObjectMap<String, Object> params) {
+    protected void setScreen(int screenId, ValueBundle params) {
         if (mCurrentScreen != null) {
             mCurrentScreen.dispose();
         }
@@ -72,10 +71,12 @@ public class CallOfDoodie implements ScreenCallback, ApplicationListener {
 
     @Override
     public void onScreenFinishedWithResults(Screen screen,
-            ObjectMap<String, Object> resultBundle) {
+            ValueBundle resultBundle) {
         
         if (screen != null && screen instanceof MenuScreen) {
-            setScreen(SCREEN_GAME, null);
+            ValueBundle params = new ValueBundle();
+            params.put("levelNum", new Integer(5));
+            setScreen(SCREEN_GAME, params);
         } else {
             setScreen(SCREEN_MENU, null);
         }
